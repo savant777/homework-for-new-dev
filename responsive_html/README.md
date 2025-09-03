@@ -22,6 +22,7 @@ responsive\_html/
 │   ├── risk-2.png
 │   ├── risk-3.png
 │   └── ...etc
+│
 ├── index.html           # Main HTML file
 └── style.css            # Stylesheet for custom styling
 

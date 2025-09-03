@@ -64,7 +64,7 @@ namespace ClassRegistrationApp
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
-                return; // ออกจากเมธอด ไม่ลงทะเบียนซ้ำ
+                return;
             }
 
             DialogResult result = MessageBox.Show(

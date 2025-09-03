@@ -11,8 +11,7 @@ It demonstrates integrating a LINE Official Account with Node.js and Express, su
 line\_oa\_api/
 ├── littleChat.js         # Main application file
 ├── package.json          # Project dependencies and scripts
-├── package-lock.json     # Dependency lock file
-└── README.md
+└── package-lock.json     # Dependency lock file
 
 ````
 

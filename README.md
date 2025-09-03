@@ -10,9 +10,9 @@ Each exercise is organized into its own folder with instructions and implementat
 ```
 
 homework-for-new-dev/
-├── powerapp\_sharepoint/    # Exercise 1: Power App + SharePoint
-├── line\_oa\_api/           # Exercise 2: Line OA API
-└── responsive\_html/        # Exercise 3: Responsive HTML
+├── class\_registration\_app/    # Exercise 1: WinForms + SQL
+├── line\_oa\_api/               # Exercise 2: Line OA API
+└── responsive\_html/            # Exercise 3: Responsive HTML
 
 ````
 
@@ -20,10 +20,24 @@ homework-for-new-dev/
 
 ## 📝 Exercises
 
-### 1. Power App + SharePoint
-- **Path**: `./powerapp_sharepoint/`
-- **Status**: Pending implementation
-- **Details**: _To be updated_
+### 1. WinForms + SQL
+- **Path**: `./class_registration_app/`
+- **Status**: ✅ Completed
+- **Description**: Desktop application built with **C# WinForms** and **SQL Server LocalDB**.  
+  - Allows viewing classes, registering for classes, and managing registrations.  
+  - Uses a local `.mdf` database file (`ClassRegistrationDB.mdf`) stored within the project.  
+  - Posters for classes are stored in `class_poster/` and loaded dynamically.
+- **Origin Note**:  
+  This project was originally intended to be implemented using **Power App + SharePoint** (`./powerapp_sharepoint/`).  
+  Due to limitations and incompatibility with the assignment requirements, it was re-implemented as a WinForms desktop application with a local SQL database to better demonstrate CRUD operations and data management.
+- **Setup**:
+  1. Clone the repository.  
+  2. Open `ClassRegistrationApp.sln` in Visual Studio 2019/2022.  
+  3. Restore NuGet packages (via `packages.config`) if prompted.  
+  4. Build and run the project.  
+- **Notes**:
+  - Database file path is set relative to the executable (`bin\Debug\ClassRegistrationDB.mdf`) for portability.  
+  - Ensure LocalDB is installed on your system.
 
 ---
 
@@ -39,7 +53,7 @@ homework-for-new-dev/
      ```
   3. Start the server:  
      ```bash
-     npm start
+     node littleChat.js
      ```
 - **Notes**:
   - The project includes `.gitignore` and environment variable management.  

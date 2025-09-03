@@ -50,7 +50,7 @@ line\_oa\_api/
 4. Start the server:
 
    ```bash
-   npm start
+   node littleChat.js
    ```
 
 5. The server will run at:
@@ -147,7 +147,7 @@ This ensures a clean reset before setting up new menus.
 1. Start the server:
 
    ```bash
-   npm start
+   node littleChat.js
    ```
 2. Open browser or use a tool like **Postman**:
 

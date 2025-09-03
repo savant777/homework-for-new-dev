@@ -35,7 +35,8 @@ namespace ClassRegistrationApp
             txtClassDescription.Text = row["Description"].ToString();
 
             string posterPath = row["PosterPath"].ToString();
-            string fullPath = Path.Combine(Application.StartupPath, posterPath.Replace("/", "\\"));
+            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\", posterPath.Replace("/", Path.DirectorySeparatorChar.ToString()));
+            fullPath = Path.GetFullPath(fullPath);
 
             if (File.Exists(fullPath))
             {

@@ -32,6 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <!-- References -->
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,40 +49,47 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+  <!-- Compile Forms -->
   <ItemGroup>
-    <Compile Include="ClassDetailForm.cs">
+    <Compile Include="Forms\ClassDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClassDetailForm.Designer.cs">
+    <Compile Include="Forms\ClassDetailForm.Designer.cs">
       <DependentUpon>ClassDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBHelper.cs" />
-    <Compile Include="HomeForm.cs">
+    <EmbeddedResource Include="Forms\ClassDetailForm.resx">
+      <DependentUpon>ClassDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Forms\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeForm.Designer.cs">
+    <Compile Include="Forms\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterForm.cs">
+    <EmbeddedResource Include="Forms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterForm.Designer.cs">
+    <Compile Include="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewRegisteredForm.cs">
+    <EmbeddedResource Include="Forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Forms\ViewRegisteredForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewRegisteredForm.Designer.cs">
+    <Compile Include="Forms\ViewRegisteredForm.Designer.cs">
       <DependentUpon>ViewRegisteredForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ClassDetailForm.resx">
-      <DependentUpon>ClassDetailForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ViewRegisteredForm.resx">
+      <DependentUpon>ViewRegisteredForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeForm.resx">
-      <DependentUpon>HomeForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -92,13 +100,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegisterForm.resx">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewRegisteredForm.resx">
-      <DependentUpon>ViewRegisteredForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,68 +110,33 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <!-- Class poster images -->
+  <ItemGroup>
+    <None Include="class_poster\poster-001.png" />
+    <None Include="class_poster\poster-002.png" />
+    <None Include="class_poster\poster-003.png" />
+    <None Include="class_poster\poster-004.png" />
+    <None Include="class_poster\poster-005.png" />
+    <None Include="class_poster\poster-006.png" />
+    <None Include="class_poster\poster-007.png" />
+    <None Include="class_poster\poster-008.png" />
+    <None Include="class_poster\poster-009.png" />
+    <None Include="class_poster\poster-010.png" />
+    <None Include="class_poster\poster-011.png" />
+    <None Include="class_poster\poster-012.png" />
+    <None Include="class_poster\poster-013.png" />
+    <None Include="class_poster\poster-014.png" />
+    <None Include="class_poster\poster-015.png" />
+    <None Include="class_poster\poster-016.png" />
+    <None Include="class_poster\poster-017.png" />
+    <None Include="class_poster\poster-018.png" />
+    <None Include="class_poster\poster-019.png" />
+    <None Include="class_poster\poster-020.png" />
+  </ItemGroup>
+  <!-- Config files -->
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-001.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-002.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-003.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-004.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-005.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-006.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-007.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-008.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-009.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-010.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-011.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-012.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-013.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-014.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-015.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-016.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-017.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-018.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-019.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\poster-020.png" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

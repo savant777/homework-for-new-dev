@@ -12,13 +12,8 @@ namespace ClassRegistrationApp
 {
     internal class DBHelper
     {
-        private static string connString;
-
-        static DBHelper()
-        {
-            string dbFile = Path.Combine(Application.StartupPath, "ClassRegistrationDB.mdf");
-            connString = $@"Server=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbFile};Integrated Security=True;";
-        }
+        private static string dbFile = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\ClassRegistrationDB.mdf"));
+        private static string connString = $@"Server=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbFile};Integrated Security=True;";
 
         #region Classes
         public static DataTable GetClassesByMonth(int month)

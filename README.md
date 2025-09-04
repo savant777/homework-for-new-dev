@@ -28,7 +28,7 @@ homework-for-new-dev/
   - Uses a local `.mdf` database file (`ClassRegistrationDB.mdf`) stored within the project.  
   - Posters for classes are stored in `class_poster/` and loaded dynamically.
 - **Origin Note**:  
-  This project was originally intended to be implemented using **Power App + SharePoint** (`./powerapp_sharepoint/`).  
+  This project was originally intended to be implemented using **Power App + SharePoint**
   Due to limitations and incompatibility with the assignment requirements, it was re-implemented as a WinForms desktop application with a local SQL database to better demonstrate CRUD operations and data management.
 - **Setup**:
   1. Clone the repository.  
@@ -36,7 +36,7 @@ homework-for-new-dev/
   3. Restore NuGet packages (via `packages.config`) if prompted.  
   4. Build and run the project.  
 - **Notes**:
-  - Database file path is set relative to the executable (`bin\Debug\ClassRegistrationDB.mdf`) for portability.  
+  - Database file path is set relative to the executable (`ClassRegistrationDB.mdf`) for portability.  
   - Ensure LocalDB is installed on your system.
 
 ---

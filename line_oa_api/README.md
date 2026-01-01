@@ -1,155 +1,87 @@
-# Exercise 2: Line OA API
+# 💬 Line OA Integration API (Node.js)
 
-This project is part of the **Homework for New Dev** assignment.  
-It demonstrates integrating a LINE Official Account with Node.js and Express, supporting both **broadcast messaging** and **Rich Menu management**.
-
----
-
-## 📂 Project Structure
-```
-
-line\_oa\_api/
-├── littleChat.js         # Main application file
-├── package.json          # Project dependencies and scripts
-└── package-lock.json     # Dependency lock file
-
-````
+This project is a dedicated middleware built with **Node.js** and **Express.js** to streamline the management of LINE Official Account (OA) features. It demonstrates proficiency in interacting with the **LINE Messaging API**, handling complex message types, and programmatic Rich Menu orchestration.
 
 ---
 
-## ⚙️ Tech Stack
-- Node.js
-- Express.js
-- dotenv (for environment variables)
-- node-fetch (for calling LINE Messaging API)
+## ⚙️ Tech Stack & Dependencies
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **API Client:** node-fetch (Handling RESTful requests)
+- **Security:** dotenv (Secure environment variable management)
 
 ---
 
-## 🚀 Setup & Run
+## 🚀 Key Features
 
-1. Clone the repository and navigate to this folder:
+- **Automated Broadcast Engine:** Trigger multi-format broadcasts including Text, Video, and Flex Carousel messages via a single endpoint.
+- **Dynamic Rich Menu Orchestration:**
+    - Programmatically create and link multiple Rich Menus (`campaign_page` and `menu_page`).
+    - Implement interactive actions: URI redirection, Message triggers, and seamless Menu-switching.
+- **Cleanup Utility:** A dedicated maintenance endpoint to clear existing Rich Menus and Aliases, ensuring a clean state for new deployments.
+- **Payload Management:** Handles complex JSON structures for LINE Flex Messages and Rich Menu Area objects.
+
+---
+
+## 🛠️ Setup & Execution
+
+1. **Clone & Navigate:**
    ```bash
    git clone https://github.com/savant777/homework-for-new-dev.git
    cd homework-for-new-dev/line_oa_api
    ```
 
-2. Install dependencies:
-
+2. **Installation:**
    ```bash
    npm install
    ```
 
-3. Create an `.env` file in this folder with the following variables:
-
-   ```
+3. **Environment Configuration:**
+   Create a `.env` file in the root directory:
+   ```env
    PORT=3000
-   CHANNEL_ACCESS_TOKEN=your_channel_access_token_here
+   CHANNEL_ACCESS_TOKEN=your_access_token_here
    ```
 
-4. Start the server:
-
+4. **Run Server:**
    ```bash
    node littleChat.js
    ```
 
-5. The server will run at:
+---
 
-   ```
-   http://localhost:3000
-   ```
+## 🔗 API Documentation
+
+### 📢 Broadcast Messages
+
+`GET /broadcast`
+
+* **Function:** Dispatches a sequence of messages (Text -> Video -> Flex Carousel) to all followers.
+* **Flex Carousel:** Features a "DISCOVER" call-to-action for external link redirection.
+
+### 🖼️ Rich Menu Management
+
+`GET /setup-richmenu`
+
+* **Function:** Initializes a dual-menu system with interactive switching logic.
+* **Setup:** Creates menu objects, uploads hosted assets, and assigns the default menu to the LINE OA.
+
+`GET /clear-richmenu`
+
+* **Function:** Purges all existing Rich Menus and Aliases to prevent ID conflicts during development.
 
 ---
 
-## 🔗 API Endpoints
+## ℹ️ Technical Implementation Details
 
-### 1. Broadcast Messages
-
-Send **text**, **video**, and **flex carousel** messages to all users.
-
-```
-GET /broadcast
-```
-
-**Response:**
-
-```json
-{
-  "status": "success",
-  "message": "Broadcast sent"
-}
-```
-
-The broadcast includes:
-
-* Text message
-* Video message (with preview image)
-* Flex carousel with images + "DISCOVER" button link
+* **Authorization:** All requests are secured using Bearer Token authentication via the LINE Messaging API.
+* **Asset Handling:** Rich menu images are fetched from remote URLs and streamed to LINE's servers as binary data.
+* **Error Prevention:** Includes a `.gitignore` to protect sensitive `.env` credentials and `node_modules`.
 
 ---
 
-### 2. Setup Rich Menu
+## ✅ Postman / Browser Testing
 
-Create and assign multiple **Rich Menus** with actions (URI links, switch menus, messages).
-
-```
-GET /setup-richmenu
-```
-
-**Response:**
-
-```json
-{
-  "status": "success",
-  "message": "RichMenu created"
-}
-```
-
-* Two rich menus (`campaign_page`, `menu_page`) are created.
-* Each menu has different clickable areas (e.g., open website, send message, switch menus).
-* The first menu is set as the default Rich Menu.
-
----
-
-### 3. Clear Rich Menu & Aliases
-
-Delete all existing **Rich Menus** and **Aliases** from the LINE account.
-
-```
-GET /clear-richmenu
-```
-
-**Response:**
-
-```json
-{
-  "status": "success",
-  "message": "RichMenu & Aliases deleted"
-}
-```
-
-This ensures a clean reset before setting up new menus.
-
----
-
-## 📝 Notes
-
-* **Main entry point**: `littleChat.js`
-* Rich menu images are hosted externally and fetched via URL before uploading to LINE API.
-* API calls use `fetch` with proper authorization headers (`Bearer CHANNEL_ACCESS_TOKEN`).
-* `.gitignore` should exclude sensitive files like `.env` and `node_modules/`.
-* Make sure your LINE Official Account has the **Messaging API** enabled.
-
----
-
-## ✅ Example Usage
-
-1. Start the server:
-
-   ```bash
-   node littleChat.js
-   ```
-2. Open browser or use a tool like **Postman**:
-
-   * `http://localhost:3000/broadcast` → send broadcast message
-   * `http://localhost:3000/setup-richmenu` → create new rich menus
-   * `http://localhost:3000/clear-richmenu` → delete all menus and aliases
+* Send Broadcast: `http://localhost:3000/broadcast`
+* Initialize Menus: `http://localhost:3000/setup-richmenu`
+* Reset Menus: `http://localhost:3000/clear-richmenu`

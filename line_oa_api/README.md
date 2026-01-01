@@ -85,3 +85,9 @@ This project is a dedicated middleware built with **Node.js** and **Express.js**
 * Send Broadcast: `http://localhost:3000/broadcast`
 * Initialize Menus: `http://localhost:3000/setup-richmenu`
 * Reset Menus: `http://localhost:3000/clear-richmenu`
+
+---
+
+## 📜 License
+
+MIT License

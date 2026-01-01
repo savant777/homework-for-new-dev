@@ -50,3 +50,9 @@ responsive_html/
 ## ℹ️ Technical Implementation Note
 
 This exercise highlights my ability to take a **Figma/Design brief** and implement it with high precision. By focusing on pure HTML and CSS, I ensured the webpage remains lightweight and performs exceptionally well on both high-end desktops and mobile devices.
+
+---
+
+## 📜 License
+
+MIT License

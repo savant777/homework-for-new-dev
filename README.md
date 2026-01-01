@@ -57,3 +57,9 @@ git clone https://github.com/savant777/homework-for-new-dev.git
 
 ## ℹ️ Author's Note
 This repository was created as part of a technical interview process. It showcases my ability to adapt to new technologies, solve environmental constraints, and deliver high-quality code across different platforms.
+
+---
+
+## 📜 License
+
+MIT License
